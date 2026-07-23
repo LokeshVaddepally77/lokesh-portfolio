@@ -61,10 +61,7 @@ src/
 
 ## Notes on scope
 
-This is a static frontend site — the right shape for a portfolio, since
-there's no data that needs a server. If you'd like to add a real backend
-later (for example, a working contact form that emails you, or an API that
-serves project data so the site can be updated without a redeploy), that's a
-natural next step and would pair well with the ASP.NET Core or Node/Express
-experience already on the resume — happy to help build that when you're
-ready.
+This is a static frontend site, which is the right shape for a portfolio
+since there's no data that needs a server. A real backend (a contact form
+that emails you, or an API serving project data so the site updates without
+a redeploy) is a reasonable next step down the road.

@@ -20,7 +20,7 @@ export default function Sidebar() {
           <p className="sidebar__eyebrow">Full stack developer</p>
           <h1 className="sidebar__name">{profile.name}</h1>
           <p className="sidebar__tagline">
-            Building fast, reliable full stack apps with .NET/C# and React —
+            Building fast, reliable full stack apps with .NET/C# and React,
             based in {profile.location}.
           </p>
         </div>

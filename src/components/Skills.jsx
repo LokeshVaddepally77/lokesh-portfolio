@@ -13,8 +13,8 @@ export default function Skills() {
         ))}
       </ul>
       <p className="skills__note">
-        Full toolset — languages, databases, cloud, and system design
-        topics — shows up in context in the project write-ups above.
+        Full toolset (languages, databases, cloud, and system design topics)
+        shows up in context in the project write-ups above.
       </p>
     </section>
   );

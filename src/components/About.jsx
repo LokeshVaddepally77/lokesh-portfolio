@@ -9,7 +9,7 @@ export default function About() {
         <div>
           <p className="about__text">{profile.summary}</p>
           <p className="about__text about__text--next">
-            Next, I'm looking for a full stack role — .NET/C# or React-heavy —
+            Next, I'm looking for a full stack role (.NET/C# or React-heavy)
             where I can keep pairing production feature work with the system
             design fundamentals I've been studying: caching, replication,
             message queues, and API design.

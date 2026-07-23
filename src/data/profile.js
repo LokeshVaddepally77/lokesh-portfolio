@@ -5,12 +5,12 @@ export const profile = {
   phone: "+1 236-862-5987",
   email: "vaddepallylokesh362@gmail.com",
   linkedin: "https://linkedin.com/in/lokesh-vaddepally-32a69a212",
-  authorization: "Full Canadian work authorization — no sponsorship required",
+  authorization: "Full Canadian work authorization, no sponsorship required",
   resumeFile: "/Lokesh_Vaddepally_Resume.pdf",
   tagline: "Full-stack systems, drafted and built.",
-  github: null, // add your GitHub profile URL, e.g. "https://github.com/yourhandle"
+  github: "https://github.com/LokeshVaddepally77",
   summary:
-    "Full Stack Developer with ~3 years of professional experience across .NET/C# and React-based web applications. Recently completed an M.S. in Information Systems at Northeastern University. Hands-on experience building production-grade full stack features with ASP.NET Core, React 18, and Node.js, backed by self-directed study of system design fundamentals — scalability, caching, database replication and sharding, message queues, and API design — applied to real Canadian project work.",
+    "Full Stack Developer with ~3 years of professional experience across .NET/C# and React-based web applications. Recently completed an M.S. in Information Systems at Northeastern University. Hands-on experience building production-grade full stack features with ASP.NET Core, React 18, and Node.js, backed by self-directed study of system design fundamentals (scalability, caching, database replication and sharding, message queues, and API design) applied to real Canadian project work.",
 };
 
 export const skillGroups = [
@@ -94,7 +94,7 @@ export const timeline = [
     rev: "R1",
     date: "Dec 2021 – Sep 2024",
     title: "Full Stack Developer",
-    org: "Tata Consultancy Services — Infineon Technologies (Client)",
+    org: "Tata Consultancy Services (client: Infineon Technologies)",
     place: "Hyderabad, India",
     bullets: [
       "Developed and maintained full stack features for the Infineon client engagement using ASP.NET Core, C#, and React JS, within Agile/Scrum sprints tracked through Azure DevOps.",
@@ -105,7 +105,7 @@ export const timeline = [
   {
     rev: "R2",
     date: "Sep 2024",
-    title: "Leave of Absence — Relocation",
+    title: "Leave of Absence for Relocation",
     org: "Tata Consultancy Services",
     place: "Hyderabad → Vancouver",
     bullets: [
@@ -131,11 +131,11 @@ export const projects = [
     sheet: "01",
     name: "AHS — Home Services Marketplace",
     subtitle: "Capstone Project · Vancouver, BC",
-    role: "Solo developer — designed and built the full stack",
+    role: "Solo developer: designed and built the full stack",
     problem:
       "Homeowners, tenants, and property managers across Canada had no single place to find, vet, and message verified home service professionals or track a request end to end.",
     outcome:
-      "Shipped a working marketplace with role-based dashboards for seekers, providers, and business accounts, a full request lifecycle (pending → accepted → completed/cancelled) with payment tracking, and real-time messaging — deployed live on Vercel.",
+      "Shipped a working marketplace with role-based dashboards for seekers, providers, and business accounts, a full request lifecycle (pending → accepted → completed/cancelled) with payment tracking, and real-time messaging. Deployed live on Vercel.",
     stack: [
       "React 18",
       "TypeScript",
@@ -156,11 +156,11 @@ export const projects = [
     sheet: "02",
     name: "Healthcare Plan Management REST API",
     subtitle: "Backend Systems Project",
-    role: "Solo developer — designed and built the API",
+    role: "Solo developer: designed and built the API",
     problem:
       "Needed a backend service for managing healthcare plan data that could enforce strict schema validation and secure access, while staying responsive under load.",
     outcome:
-      "Built a schema-validated (Ajv), OAuth2/JWT-secured REST API that applies message queuing (RabbitMQ) and search indexing (Elasticsearch) — turning system design theory into a working service.",
+      "Built a schema-validated (Ajv), OAuth2/JWT-secured REST API that applies message queuing (RabbitMQ) and search indexing (Elasticsearch), turning system design theory into a working service.",
     stack: ["Node.js", "Express", "RabbitMQ", "Elasticsearch", "JWT / OAuth2 (Google, RS256)", "Ajv", "Postman"],
     links: {
       live: null,
@@ -171,15 +171,15 @@ export const projects = [
     sheet: "03",
     name: "Task Manager — ASP.NET Core MVC",
     subtitle: "Academic Project · Northeastern University",
-    role: "Solo developer — architected the layered application",
+    role: "Solo developer: architected the layered application",
     problem:
-      "Teams needed a lightweight task manager with real access control (managers vs. employees) and a full audit trail — not just a CRUD app anyone could edit.",
+      "Teams needed a lightweight task manager with real access control (managers vs. employees) and a full audit trail, not just a CRUD app anyone could edit.",
     outcome:
       "Delivered a layered MVC + Data Access app with custom authorization filters, secure session-based auth, task history/audit trail, and a GitHub Actions pipeline deploying straight to Azure App Service.",
     stack: ["ASP.NET Core MVC (.NET 8)", "C#", "Entity Framework Core", "SQL Server / MySQL", "GitHub Actions", "Azure App Service"],
     links: {
-      live: null,
-      github: null,
+      live: null, // set this once the Azure App Service redeploy is live
+      github: null, // TaskManagerSolution is private again until the leaked secret is rotated and scrubbed from git history
     },
   },
 ];
