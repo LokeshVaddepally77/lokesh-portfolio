@@ -567,29 +567,44 @@ h1, h2, h3, p {
 
 .drawing__links {
   display: flex;
-  gap: 1.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
   font-family: var(--font-mono);
   font-size: 0.82rem;
 }
 
-.drawing__links a {
-  color: var(--ink);
+.drawing__link {
   text-decoration: none;
-  border-bottom: 1px solid var(--ink-dim);
-  padding-bottom: 0.1rem;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
-.drawing__links a:hover,
-.drawing__links a:focus-visible {
+.drawing__link--live {
+  color: var(--navy-900);
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.drawing__link--live:hover,
+.drawing__link--live:focus-visible {
+  background: var(--paper);
+  border-color: var(--paper);
+  transform: translateY(-1px);
+}
+
+.drawing__link--source {
+  color: var(--slate);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.1rem;
+}
+
+.drawing__link--source:hover,
+.drawing__link--source:focus-visible {
   color: var(--paper);
   border-color: var(--paper);
-}
-
-.drawing__links-empty {
-  color: var(--slate);
-  font-size: 0.76rem;
-  font-style: italic;
 }
 
 .drawing__corner {

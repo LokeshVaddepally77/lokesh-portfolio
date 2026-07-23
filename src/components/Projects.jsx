@@ -41,19 +41,24 @@ export default function Projects() {
 
             <div className="drawing__links">
               {p.links?.live ? (
-                <a href={p.links.live} target="_blank" rel="noreferrer">
+                <a
+                  className="drawing__link drawing__link--live"
+                  href={p.links.live}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   View live ↗
                 </a>
               ) : null}
               {p.links?.github ? (
-                <a href={p.links.github} target="_blank" rel="noreferrer">
+                <a
+                  className="drawing__link drawing__link--source"
+                  href={p.links.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Source ↗
                 </a>
-              ) : null}
-              {!p.links?.live && !p.links?.github ? (
-                <span className="drawing__links-empty">
-                  Add a live or repo link in profile.js
-                </span>
               ) : null}
             </div>
           </article>

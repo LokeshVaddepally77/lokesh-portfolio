@@ -178,7 +178,7 @@ export const projects = [
       "Delivered a layered MVC + Data Access app with custom authorization filters, secure session-based auth, task history/audit trail, and a GitHub Actions pipeline deploying straight to Azure App Service.",
     stack: ["ASP.NET Core MVC (.NET 8)", "C#", "Entity Framework Core", "SQL Server / MySQL", "GitHub Actions", "Azure App Service"],
     links: {
-      live: null, // set this once the Azure App Service redeploy is live
+      live: "https://taskmanager-lokesh-ezaah3c8dmdpbnae.canadacentral-01.azurewebsites.net",
       github: null, // TaskManagerSolution is private again until the leaked secret is rotated and scrubbed from git history
     },
   },
