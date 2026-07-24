@@ -562,13 +562,15 @@ h1, h2, h3, h4, p {
   border-left: 4px solid var(--accent, var(--ink));
   background: var(--navy-800);
   padding: 1.4rem 1.6rem 1.4rem 2.2rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 10px 24px rgba(3, 12, 22, 0.3);
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .degree-card:hover {
   border-color: var(--ink-dim);
   border-left-color: var(--accent, var(--ink));
   transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(3, 12, 22, 0.4);
 }
 
 .degree-card--accent-0 { --accent: var(--ink); }
@@ -577,12 +579,13 @@ h1, h2, h3, h4, p {
 .degree-card--accent-3 { --accent: var(--rose); }
 
 .degree-card__logo {
-  width: 56px;
-  height: 56px;
+  width: 96px;
+  height: 96px;
   object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
   border-radius: 50%;
   background: var(--paper);
-  padding: 4px;
+  padding: 6px;
   flex-shrink: 0;
 }
 
@@ -650,6 +653,7 @@ h1, h2, h3, h4, p {
   padding: 1.2rem 1.2rem 1.1rem;
   font-size: 0.9rem;
   color: var(--paper);
+  box-shadow: 0 8px 20px rgba(3, 12, 22, 0.3);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -658,6 +662,13 @@ h1, h2, h3, h4, p {
   height: 26px;
   flex-shrink: 0;
   margin-top: 0.15rem;
+}
+
+.cert-card__icon--badge {
+  background: var(--paper);
+  border-radius: 50%;
+  padding: 4px;
+  box-sizing: content-box;
 }
 
 .cert-card__name {

@@ -1,7 +1,21 @@
 import SheetHeader from "../components/SheetHeader.jsx";
 import { education, certifications } from "../data/profile.js";
 import GradCap from "../components/illustrations/GradCap.jsx";
-import { SiUdemy } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+import { TbMessageChatbot } from "react-icons/tb";
+
+// One relevant icon per certification, matched to its actual subject —
+// not a generic Udemy badge repeated three times. OpenAI has no icon in
+// this icon set, so its symbol mark is loaded directly (public domain,
+// Wikimedia Commons: OpenAI_logo_2025_(symbol).svg).
+const certMeta = {
+  "SQL – MySQL for Data Analytics": { Icon: SiMysql, color: "#4479A1" },
+  "Introduction to OpenAI API": { image: "/openai-symbol.svg" },
+  "The Complete Prompt Engineering for AI Bootcamp": {
+    Icon: TbMessageChatbot,
+    color: "#5fe1d6",
+  },
+};
 
 export default function Education() {
   return (
@@ -45,15 +59,31 @@ export default function Education() {
 
       <h3 className="education-page__subhead">Certifications</h3>
       <ul className="cert-grid">
-        {certifications.map((c, i) => (
-          <li className={`cert-card cert-card--accent-${i % 4}`} key={c} data-reveal>
-            <SiUdemy className="cert-card__icon" style={{ color: "#A435F0" }} aria-hidden="true" />
-            <div>
-              <p className="cert-card__name">{c}</p>
-              <span className="cert-card__issuer">Udemy</span>
-            </div>
-          </li>
-        ))}
+        {certifications.map((c, i) => {
+          const meta = certMeta[c] ?? {};
+          return (
+            <li className={`cert-card cert-card--accent-${i % 4}`} key={c} data-reveal>
+              {meta.image ? (
+                <img
+                  className="cert-card__icon cert-card__icon--badge"
+                  src={meta.image}
+                  alt=""
+                  aria-hidden="true"
+                />
+              ) : meta.Icon ? (
+                <meta.Icon
+                  className="cert-card__icon"
+                  style={{ color: meta.color }}
+                  aria-hidden="true"
+                />
+              ) : null}
+              <div>
+                <p className="cert-card__name">{c}</p>
+                <span className="cert-card__issuer">Udemy</span>
+              </div>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
