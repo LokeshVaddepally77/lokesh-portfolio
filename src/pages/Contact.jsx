@@ -1,7 +1,6 @@
 import { useState } from "react";
 import SheetHeader from "../components/SheetHeader.jsx";
 import { profile } from "../data/profile.js";
-import Envelope from "../components/illustrations/Envelope.jsx";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -21,7 +20,13 @@ export default function Contact() {
       <SheetHeader index="06" label="SIGN-OFF" title="Get in touch" />
 
       <div className="education-page__intro">
-        <Envelope className="education-page__illo" />
+        <div className="photo-frame education-page__illo">
+          <img src="/lokesh_pic.jpeg" alt={profile.name} />
+          <span className="photo-frame__corner photo-frame__corner--tl" aria-hidden="true" />
+          <span className="photo-frame__corner photo-frame__corner--tr" aria-hidden="true" />
+          <span className="photo-frame__corner photo-frame__corner--bl" aria-hidden="true" />
+          <span className="photo-frame__corner photo-frame__corner--br" aria-hidden="true" />
+        </div>
         <p className="about__text">
           Open to full stack roles across .NET/C# and React. Based in{" "}
           {profile.location}, {profile.authorization.toLowerCase()}.
