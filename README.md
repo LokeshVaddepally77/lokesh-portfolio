@@ -1,9 +1,9 @@
 # Lokesh Vaddepally — Portfolio
 
-A one-page portfolio site built with React + Vite, styled as an engineering
-drafting sheet (title block, revision-history table, drawing sheets) — a nod
-to the civil-engineering-to-software-architecture path in the resume this
-site is built from.
+A multi-page portfolio site built with React, Vite, and React Router, styled
+as an engineering drafting sheet (title block, revision-history table,
+drawing sheets) — a nod to the civil-engineering-to-software-architecture
+path in the resume this site is built from.
 
 ## Run it locally in VS Code
 
@@ -35,8 +35,8 @@ the components re-render automatically, no need to touch JSX or CSS.
 - Each project in `profile.js` has a `links: { live, github }` object set to
   `null`. Add your deployed URL and/or repo link there — the button just
   won't render until you do.
-- `profile.github` is `null` too. Add your GitHub profile URL to show it in
-  the sidebar.
+- `profile.github` is `null` too. Add your GitHub profile URL to show it on
+  the home page.
 
 The résumé PDF that the "Download resume" button links to is at
 `public/Lokesh_Vaddepally_Resume.pdf`. Replace that file (keep the same name,
@@ -46,17 +46,22 @@ or update the `resumeFile` path in `profile.js`) whenever you update your resume
 
 ```
 src/
-  data/profile.js         ← all content (edit this first)
-  hooks/useScrollSpy.js    ← IntersectionObserver hook powering the active-nav highlight
+  data/profile.js          ← all content (edit this first)
+  data/techIcons.js         ← brand-icon tech grid + fallback text-only skills
+  hooks/useReveal.js          ← IntersectionObserver hook powering scroll-reveal animation
   components/
-    Sidebar.jsx             ← persistent left panel: name, tagline, nav, resume/CTA, socials
-    Projects.jsx              ← "Selected work" case studies (problem / role / outcome / links)
-    About.jsx                   ← summary + education + certifications
-    Experience.jsx                ← revision-history table (career timeline)
-    Proof.jsx                       ← companies/institutions worked with
-    Skills.jsx                       ← short, light skills list
-    Contact.jsx                       ← contact + sign-off footer
-  index.css                          ← the whole design system (CSS variables at top)
+    Navbar.jsx                  ← persistent top nav (routes, mobile toggle)
+    SheetHeader.jsx               ← shared "SHEET n/6" section header
+    Projects.jsx                    ← "Selected work" case studies (routed at /projects)
+    illustrations/                    ← hand-drawn monoline SVG illustrations
+  pages/
+    Home.jsx                            ← hero, summary, tech stack grid (/)
+    Education.jsx                         ← degrees + certifications (/education)
+    Experience.jsx                          ← revision-history cards (/experience)
+    Resume.jsx                                ← embedded PDF viewer (/resume)
+    Contact.jsx                                 ← contact + sign-off footer (/contact)
+  index.css                                     ← the whole design system (CSS variables at top)
+vercel.json                                       ← SPA rewrite so client-side routes work on refresh
 ```
 
 ## Notes on scope

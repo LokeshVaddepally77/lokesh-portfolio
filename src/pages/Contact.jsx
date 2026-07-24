@@ -1,6 +1,7 @@
 import { useState } from "react";
-import SheetHeader from "./SheetHeader.jsx";
+import SheetHeader from "../components/SheetHeader.jsx";
 import { profile } from "../data/profile.js";
+import Envelope from "../components/illustrations/Envelope.jsx";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -18,11 +19,16 @@ export default function Contact() {
   return (
     <section className="sheet contact" id="contact">
       <SheetHeader index="06" label="SIGN-OFF" title="Get in touch" />
-      <div className="contact__grid" data-reveal>
-        <p className="contact__text">
+
+      <div className="education-page__intro">
+        <Envelope className="education-page__illo" />
+        <p className="about__text">
           Open to full stack roles across .NET/C# and React. Based in{" "}
           {profile.location}, {profile.authorization.toLowerCase()}.
         </p>
+      </div>
+
+      <div className="contact__grid" data-reveal>
         <div className="contact__actions">
           <a className="btn btn--primary" href={`mailto:${profile.email}`}>
             Email {profile.name.split(" ")[0]}
@@ -43,6 +49,7 @@ export default function Contact() {
           </button>
         </div>
       </div>
+
       <footer className="footer">
         <span>© {new Date().getFullYear()} {profile.name}</span>
         <span>Drawn in React · Rev {new Date().getFullYear()}</span>

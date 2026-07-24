@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 
 // Fades/slides in any [data-reveal] element the first time it scrolls into
-// view. Runs once for the whole tree, so components just add the attribute.
-export default function useReveal() {
+// view. Components just add the attribute; pass a `key` (e.g. the route
+// pathname) so it re-scans after the page's elements change.
+export default function useReveal(key) {
   useEffect(() => {
     const elements = document.querySelectorAll("[data-reveal]");
     if (elements.length === 0) return undefined;
@@ -26,5 +27,5 @@ export default function useReveal() {
 
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [key]);
 }

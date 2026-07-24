@@ -4,7 +4,7 @@ import { projects } from "../data/profile.js";
 export default function Projects() {
   return (
     <section className="sheet work" id="work">
-      <SheetHeader index="01" label="DRAWINGS" title="Selected work" />
+      <SheetHeader index="04" label="DRAWINGS" title="Selected work" />
       <div className="work__list">
         {projects.map((p) => (
           <article className="drawing" key={p.sheet} data-reveal>
