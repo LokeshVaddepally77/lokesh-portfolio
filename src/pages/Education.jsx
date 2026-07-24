@@ -60,27 +60,34 @@ export default function Education() {
       <h3 className="education-page__subhead">Certifications</h3>
       <ul className="cert-grid">
         {certifications.map((c, i) => {
-          const meta = certMeta[c] ?? {};
+          const meta = certMeta[c.name] ?? {};
           return (
-            <li className={`cert-card cert-card--accent-${i % 4}`} key={c} data-reveal>
-              {meta.image ? (
-                <img
-                  className="cert-card__icon cert-card__icon--badge"
-                  src={meta.image}
-                  alt=""
-                  aria-hidden="true"
-                />
-              ) : meta.Icon ? (
-                <meta.Icon
-                  className="cert-card__icon"
-                  style={{ color: meta.color }}
-                  aria-hidden="true"
-                />
-              ) : null}
-              <div>
-                <p className="cert-card__name">{c}</p>
-                <span className="cert-card__issuer">Udemy</span>
-              </div>
+            <li key={c.name} data-reveal>
+              <a
+                className={`cert-card cert-card--accent-${i % 4}`}
+                href={c.file}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {meta.image ? (
+                  <img
+                    className="cert-card__icon cert-card__icon--badge"
+                    src={meta.image}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                ) : meta.Icon ? (
+                  <meta.Icon
+                    className="cert-card__icon"
+                    style={{ color: meta.color }}
+                    aria-hidden="true"
+                  />
+                ) : null}
+                <div>
+                  <p className="cert-card__name">{c.name}</p>
+                  <span className="cert-card__issuer">Udemy · View certificate ↗</span>
+                </div>
+              </a>
             </li>
           );
         })}

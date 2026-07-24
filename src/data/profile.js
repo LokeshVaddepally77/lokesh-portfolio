@@ -217,7 +217,16 @@ export const education = [
 ];
 
 export const certifications = [
-  "SQL – MySQL for Data Analytics",
-  "Introduction to OpenAI API",
-  "The Complete Prompt Engineering for AI Bootcamp",
+  {
+    name: "SQL – MySQL for Data Analytics",
+    file: "/certificates/sql-mysql-certificate.pdf",
+  },
+  {
+    name: "Introduction to OpenAI API",
+    file: "/certificates/openai-api-certificate.pdf",
+  },
+  {
+    name: "The Complete Prompt Engineering for AI Bootcamp",
+    file: "/certificates/prompt-engineering-certificate.pdf",
+  },
 ];
