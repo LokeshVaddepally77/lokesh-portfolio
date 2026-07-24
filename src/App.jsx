@@ -5,8 +5,11 @@ import Experience from "./components/Experience.jsx";
 import Proof from "./components/Proof.jsx";
 import Skills from "./components/Skills.jsx";
 import Contact from "./components/Contact.jsx";
+import useReveal from "./hooks/useReveal.js";
 
 export default function App() {
+  useReveal();
+
   return (
     <div className="layout">
       <Sidebar />

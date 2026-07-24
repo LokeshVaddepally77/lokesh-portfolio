@@ -5,9 +5,13 @@ export default function Skills() {
   return (
     <section className="sheet skills" id="skills">
       <SheetHeader index="05" label="SPECIFICATIONS" title="Skills" />
-      <ul className="skills__row">
-        {coreSkills.map((item) => (
-          <li className="skills__chip" key={item}>
+      <ul className="skills__row" data-reveal>
+        {coreSkills.map((item, i) => (
+          <li
+            className="skills__chip"
+            key={item}
+            style={{ transitionDelay: `${i * 40}ms` }}
+          >
             {item}
           </li>
         ))}

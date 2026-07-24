@@ -7,7 +7,7 @@ export default function Proof() {
       <SheetHeader index="04" label="APPROVALS" title="Where I've worked" />
       <ul className="proof__list">
         {companies.map((c) => (
-          <li className="proof__item" key={c.name}>
+          <li className="proof__item" key={c.name} data-reveal>
             <span className="proof__name">{c.name}</span>
             <span className="proof__detail">{c.detail}</span>
           </li>

@@ -12,7 +12,7 @@ export default function Experience() {
           <span role="columnheader">Description</span>
         </div>
         {timeline.map((entry) => (
-          <div className="rev-table__row" role="row" key={entry.rev}>
+          <div className="rev-table__row" role="row" key={entry.rev} data-reveal>
             <span className="rev-table__rev" role="cell">
               {entry.rev}
             </span>

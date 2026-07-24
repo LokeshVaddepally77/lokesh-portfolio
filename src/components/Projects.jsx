@@ -7,7 +7,7 @@ export default function Projects() {
       <SheetHeader index="01" label="DRAWINGS" title="Selected work" />
       <div className="work__list">
         {projects.map((p) => (
-          <article className="drawing" key={p.sheet}>
+          <article className="drawing" key={p.sheet} data-reveal>
             <div className="drawing__corner" aria-hidden="true" />
             <header className="drawing__header">
               <span className="drawing__sheet">SHEET {p.sheet}</span>

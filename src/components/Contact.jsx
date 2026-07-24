@@ -18,7 +18,7 @@ export default function Contact() {
   return (
     <section className="sheet contact" id="contact">
       <SheetHeader index="06" label="SIGN-OFF" title="Get in touch" />
-      <div className="contact__grid">
+      <div className="contact__grid" data-reveal>
         <p className="contact__text">
           Open to full stack roles across .NET/C# and React. Based in{" "}
           {profile.location}, {profile.authorization.toLowerCase()}.
