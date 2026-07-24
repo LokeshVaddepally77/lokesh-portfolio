@@ -17,8 +17,13 @@ export default function Education() {
 
       <h3 className="education-page__subhead">Degrees</h3>
       <div className="degree-list">
-        {education.map((e) => (
-          <div className="degree-card" key={e.degree} data-reveal>
+        {education.map((e, i) => (
+          <div
+            className={`degree-card degree-card--accent-${i % 4}`}
+            key={e.degree}
+            data-reveal
+          >
+            <span className="degree-card__index">{String(i + 1).padStart(2, "0")}</span>
             <div className="degree-card__head">
               <h4>{e.degree}</h4>
               <span className="degree-card__date">{e.date}</span>
@@ -34,8 +39,8 @@ export default function Education() {
 
       <h3 className="education-page__subhead">Certifications</h3>
       <ul className="cert-grid">
-        {certifications.map((c) => (
-          <li className="cert-card" key={c} data-reveal>
+        {certifications.map((c, i) => (
+          <li className={`cert-card cert-card--accent-${i % 4}`} key={c} data-reveal>
             {c}
           </li>
         ))}

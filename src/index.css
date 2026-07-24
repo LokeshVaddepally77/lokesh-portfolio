@@ -10,6 +10,8 @@
   --paper: #eaf0f2;
   --slate: #7c93a8;
   --amber: #e8a33d;
+  --rose: #e8708a;
+  --azure: #5b8def;
 
   --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
   --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -524,15 +526,33 @@ h1, h2, h3, h4, p {
 }
 
 .degree-card {
+  position: relative;
   border: 1px solid var(--line);
+  border-left: 4px solid var(--accent, var(--ink));
   background: var(--navy-800);
-  padding: 1.4rem 1.6rem;
+  padding: 1.4rem 1.6rem 1.4rem 2.2rem;
   transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .degree-card:hover {
   border-color: var(--ink-dim);
+  border-left-color: var(--accent, var(--ink));
   transform: translateY(-2px);
+}
+
+.degree-card--accent-0 { --accent: var(--ink); }
+.degree-card--accent-1 { --accent: var(--amber); }
+.degree-card--accent-2 { --accent: var(--azure); }
+.degree-card--accent-3 { --accent: var(--rose); }
+
+.degree-card__index {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent, var(--ink));
+  letter-spacing: 0.08em;
+  display: block;
+  margin-bottom: 0.4rem;
 }
 
 .degree-card__head {
@@ -576,17 +596,25 @@ h1, h2, h3, h4, p {
 
 .cert-card {
   border: 1px solid var(--line);
+  border-top: 4px solid var(--accent, var(--ink));
   background: var(--navy-800);
-  padding: 1.1rem 1.2rem;
+  padding: 1.2rem 1.2rem 1.1rem;
   font-size: 0.9rem;
   color: var(--paper);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cert-card:hover {
   border-color: var(--ink-dim);
-  transform: translateY(-2px);
+  border-top-color: var(--accent, var(--ink));
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(3, 12, 22, 0.3);
 }
+
+.cert-card--accent-0 { --accent: var(--ink); }
+.cert-card--accent-1 { --accent: var(--amber); }
+.cert-card--accent-2 { --accent: var(--azure); }
+.cert-card--accent-3 { --accent: var(--rose); }
 
 /* ============ Experience page ============ */
 .exp-list {
