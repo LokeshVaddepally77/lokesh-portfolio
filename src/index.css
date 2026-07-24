@@ -555,6 +555,9 @@ h1, h2, h3, h4, p {
 
 .degree-card {
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.4rem;
   border: 1px solid var(--line);
   border-left: 4px solid var(--accent, var(--ink));
   background: var(--navy-800);
@@ -572,6 +575,21 @@ h1, h2, h3, h4, p {
 .degree-card--accent-1 { --accent: var(--amber); }
 .degree-card--accent-2 { --accent: var(--azure); }
 .degree-card--accent-3 { --accent: var(--rose); }
+
+.degree-card__logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: var(--paper);
+  padding: 4px;
+  flex-shrink: 0;
+}
+
+.degree-card__body {
+  min-width: 0;
+  flex: 1;
+}
 
 .degree-card__index {
   font-family: var(--font-mono);
@@ -623,6 +641,9 @@ h1, h2, h3, h4, p {
 }
 
 .cert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
   border: 1px solid var(--line);
   border-top: 4px solid var(--accent, var(--ink));
   background: var(--navy-800);
@@ -630,6 +651,25 @@ h1, h2, h3, h4, p {
   font-size: 0.9rem;
   color: var(--paper);
   transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cert-card__icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.cert-card__name {
+  margin: 0;
+}
+
+.cert-card__issuer {
+  display: block;
+  margin-top: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--slate);
 }
 
 .cert-card:hover {
@@ -997,6 +1037,10 @@ h1, h2, h3, h4, p {
   .sheet {
     padding-left: 6vw;
     padding-right: 6vw;
+  }
+
+  .degree-card {
+    flex-direction: column;
   }
 
   .exp-card__head,

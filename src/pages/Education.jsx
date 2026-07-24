@@ -1,6 +1,7 @@
 import SheetHeader from "../components/SheetHeader.jsx";
 import { education, certifications } from "../data/profile.js";
 import GradCap from "../components/illustrations/GradCap.jsx";
+import { SiUdemy } from "react-icons/si";
 
 export default function Education() {
   return (
@@ -23,16 +24,21 @@ export default function Education() {
             key={e.degree}
             data-reveal
           >
-            <span className="degree-card__index">{String(i + 1).padStart(2, "0")}</span>
-            <div className="degree-card__head">
-              <h4>{e.degree}</h4>
-              <span className="degree-card__date">{e.date}</span>
+            {e.logo ? (
+              <img className="degree-card__logo" src={e.logo} alt={`${e.school} logo`} />
+            ) : null}
+            <div className="degree-card__body">
+              <span className="degree-card__index">{String(i + 1).padStart(2, "0")}</span>
+              <div className="degree-card__head">
+                <h4>{e.degree}</h4>
+                <span className="degree-card__date">{e.date}</span>
+              </div>
+              <p className="degree-card__school">
+                {e.school}
+                {e.place ? ` · ${e.place}` : ""}
+              </p>
+              {e.detail ? <p className="degree-card__detail">{e.detail}</p> : null}
             </div>
-            <p className="degree-card__school">
-              {e.school}
-              {e.place ? ` · ${e.place}` : ""}
-            </p>
-            {e.detail ? <p className="degree-card__detail">{e.detail}</p> : null}
           </div>
         ))}
       </div>
@@ -41,7 +47,11 @@ export default function Education() {
       <ul className="cert-grid">
         {certifications.map((c, i) => (
           <li className={`cert-card cert-card--accent-${i % 4}`} key={c} data-reveal>
-            {c}
+            <SiUdemy className="cert-card__icon" style={{ color: "#A435F0" }} aria-hidden="true" />
+            <div>
+              <p className="cert-card__name">{c}</p>
+              <span className="cert-card__issuer">Udemy</span>
+            </div>
           </li>
         ))}
       </ul>

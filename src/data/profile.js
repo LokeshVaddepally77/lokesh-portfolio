@@ -195,6 +195,8 @@ export const companies = [
   },
 ];
 
+// Northeastern seal: Wikimedia Commons, CC BY-SA 4.0
+// (https://commons.wikimedia.org/wiki/File:NU_RGB_seal_R.png)
 export const education = [
   {
     degree: "M.S. in Information Systems",
@@ -202,6 +204,7 @@ export const education = [
     place: "Vancouver, BC, Canada",
     detail: "GPA 3.4/4.0",
     date: "May 2026",
+    logo: "/northeastern.png",
   },
   {
     degree: "B.Tech in Civil Engineering",
@@ -209,6 +212,7 @@ export const education = [
     place: "",
     detail: "GPA 7.3/10",
     date: "",
+    logo: "/MRIT.jpeg",
   },
 ];
 
