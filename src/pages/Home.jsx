@@ -1,4 +1,4 @@
-import { profile } from "../data/profile.js";
+import { profile, mailtoLink } from "../data/profile.js";
 import { techIcons, noIconSkills } from "../data/techIcons.js";
 import Workstation from "../components/illustrations/Workstation.jsx";
 
@@ -31,14 +31,14 @@ export default function Home() {
               <a className="btn btn--ghost" href={profile.resumeFile} download>
                 Résumé
               </a>
-              <a className="btn btn--ghost" href={`mailto:${profile.email}`}>
+              <a className="btn btn--ghost" href={mailtoLink}>
                 Contact me
               </a>
             </div>
 
             <ul className="hero__social">
               <li>
-                <a href={`mailto:${profile.email}`}>Email</a>
+                <a href={mailtoLink}>Email</a>
               </li>
               <li>
                 <a href={profile.linkedin} target="_blank" rel="noreferrer">

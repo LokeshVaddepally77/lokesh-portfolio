@@ -13,6 +13,11 @@ export const profile = {
     "Full Stack Developer with ~3 years of professional experience across .NET/C# and React-based web applications. Recently completed an M.S. in Information Systems at Northeastern University. Hands-on experience building production-grade full stack features with ASP.NET Core, React 18, and Node.js, backed by self-directed study of system design fundamentals (scalability, caching, database replication and sharding, message queues, and API design) applied to real Canadian project work.",
 };
 
+// A plain "mailto:email" shows as a bare, duplicated address in some
+// clients (Outlook shows "email <email>" with no name attached). Encoding
+// the display name alongside it fixes that in Outlook/Gmail/Apple Mail.
+export const mailtoLink = `mailto:${encodeURIComponent(`${profile.name} <${profile.email}>`)}`;
+
 export const skillGroups = [
   {
     label: "Languages & Web",

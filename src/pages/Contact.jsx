@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SheetHeader from "../components/SheetHeader.jsx";
-import { profile } from "../data/profile.js";
+import { profile, mailtoLink } from "../data/profile.js";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -35,7 +35,7 @@ export default function Contact() {
 
       <div className="contact__grid" data-reveal>
         <div className="contact__actions">
-          <a className="btn btn--primary" href={`mailto:${profile.email}`}>
+          <a className="btn btn--primary" href={mailtoLink}>
             Email {profile.name.split(" ")[0]}
           </a>
           <a className="btn btn--ghost" href={`tel:${profile.phone.replace(/\s/g, "")}`}>
