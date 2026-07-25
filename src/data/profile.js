@@ -3,7 +3,7 @@ export const profile = {
   role: "Full Stack Developer",
   location: "Vancouver, BC, Canada",
   phone: "+1 236-862-5987",
-  email: "vaddepallylokesh362@gmail.com",
+  email: "lokesh.vaddepally.ca@gmail.com",
   linkedin: "https://linkedin.com/in/lokesh-vaddepally-32a69a212",
   authorization: "Full Canadian work authorization, no sponsorship required",
   resumeFile: "/Lokesh_Vaddepally_Resume.pdf",
@@ -104,17 +104,6 @@ export const timeline = [
   },
   {
     rev: "R2",
-    date: "Sep 2024",
-    title: "Leave of Absence for Relocation",
-    org: "Tata Consultancy Services",
-    place: "Hyderabad → Vancouver",
-    bullets: [
-      "Took leave without pay to relocate to Canada for full-time graduate studies.",
-      "Remains a TCS associate exploring re-fitment opportunities.",
-    ],
-  },
-  {
-    rev: "R3",
     date: "2024 – May 2026",
     title: "M.S. in Information Systems",
     org: "Northeastern University",
