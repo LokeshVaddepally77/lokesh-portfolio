@@ -29,7 +29,7 @@ export default function Experience() {
               </div>
               <span className="exp-card__date">{entry.date}</span>
             </div>
-            <details className="exp-card__details">
+            <details className="exp-card__details" open>
               <summary>Responsibilities</summary>
               <ul>
                 {entry.bullets.map((b, i) => (

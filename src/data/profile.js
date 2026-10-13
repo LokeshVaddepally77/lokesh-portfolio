@@ -115,7 +115,7 @@ export const timeline = [
     place: "Vancouver, BC, Canada",
     bullets: [
       "Completed graduate coursework while self-directing study of system design fundamentals.",
-      "Delivered three Canada-based full stack projects (see Drawings) applying that theory to real code.",
+      "Delivered three Canada-based full stack projects (see Projects) applying that theory to real code.",
     ],
   },
 ];
@@ -173,7 +173,7 @@ export const projects = [
     stack: ["ASP.NET Core MVC (.NET 8)", "C#", "Entity Framework Core", "SQL Server / MySQL", "GitHub Actions", "Azure App Service"],
     links: {
       live: "https://taskmanager-lokesh-ezaah3c8dmdpbnae.canadacentral-01.azurewebsites.net",
-      github: null, // TaskManagerSolution is private again until the leaked secret is rotated and scrubbed from git history
+      github: null, // repo is private
     },
   },
 ];

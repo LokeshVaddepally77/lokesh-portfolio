@@ -29,7 +29,7 @@ export default function Contact() {
         </div>
         <p className="about__text">
           Open to full stack roles across .NET/C# and React. Based in{" "}
-          {profile.location}, {profile.authorization.toLowerCase()}.
+          {profile.location}. {profile.authorization}.
         </p>
       </div>
 
@@ -49,6 +49,16 @@ export default function Contact() {
           >
             LinkedIn
           </a>
+          {profile.github ? (
+            <a
+              className="btn btn--ghost"
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+          ) : null}
           <button className="btn btn--ghost" onClick={copyEmail} type="button">
             {copied ? "Copied" : "Copy email"}
           </button>

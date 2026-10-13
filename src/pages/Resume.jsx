@@ -15,6 +15,11 @@ export default function Resume() {
         </a>
       </div>
 
+      <p className="resume-page__mobile-note">
+        Most phone browsers can't preview PDFs inline. Use Download PDF or
+        Open in new tab above to read the résumé.
+      </p>
+
       <div className="resume-page__viewer">
         <iframe
           src={profile.resumeFile}

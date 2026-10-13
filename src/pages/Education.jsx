@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SheetHeader from "../components/SheetHeader.jsx";
 import { education, certifications } from "../data/profile.js";
 import GradCap from "../components/illustrations/GradCap.jsx";
@@ -26,7 +27,7 @@ export default function Education() {
         <GradCap className="education-page__illo" />
         <p className="about__text">
           Degrees, certifications, and the credentials backing up the work in{" "}
-          <a href="/projects">Projects</a>.
+          <Link to="/projects">Projects</Link>.
         </p>
       </div>
 

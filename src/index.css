@@ -1,5 +1,6 @@
 /* ============ Tokens ============ */
 :root {
+  color-scheme: dark;
   --navy-900: #0a1826;
   --navy-800: #0f2136;
   --navy-700: #142a44;
@@ -953,6 +954,23 @@ h1, h2, h3, h4, p {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Phone browsers mostly can't render an inline PDF, so swap the empty
+   viewer for a pointer to the buttons above. */
+.resume-page__mobile-note {
+  display: none;
+  color: var(--slate);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 700px) {
+  .resume-page__mobile-note {
+    display: block;
+  }
+  .resume-page__viewer {
+    display: none;
+  }
 }
 
 /* ============ Contact ============ */

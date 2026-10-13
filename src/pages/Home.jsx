@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { profile, mailtoLink } from "../data/profile.js";
 import { techIcons, noIconSkills } from "../data/techIcons.js";
 import Workstation from "../components/illustrations/Workstation.jsx";
@@ -25,9 +26,9 @@ export default function Home() {
             </p>
 
             <div className="hero__actions">
-              <a className="btn btn--primary" href="/projects">
+              <Link className="btn btn--primary" to="/projects">
                 View my work
-              </a>
+              </Link>
               <a className="btn btn--ghost" href={profile.resumeFile} download>
                 Résumé
               </a>
