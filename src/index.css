@@ -1367,6 +1367,10 @@ em {
   color: var(--muted);
 }
 
+.timeline__actions {
+  margin-top: 1.5rem;
+}
+
 .timeline__blurb {
   margin-top: 0.75rem;
   font-style: italic;

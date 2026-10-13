@@ -1,4 +1,4 @@
-import { FiAward, FiBriefcase, FiDownload } from "react-icons/fi";
+import { FiArrowUpRight, FiAward, FiBriefcase, FiDownload } from "react-icons/fi";
 import SectionHeader from "../components/SectionHeader.jsx";
 import { profile, timeline } from "../data/profile.js";
 
@@ -51,6 +51,18 @@ export default function Experience() {
                     <li key={b}>{b}</li>
                   ))}
                 </ul>
+                {entry.live ? (
+                  <div className="actions timeline__actions">
+                    <a
+                      className="btn btn--primary btn--sm"
+                      href={entry.live}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      View live site <FiArrowUpRight aria-hidden="true" />
+                    </a>
+                  </div>
+                ) : null}
               </article>
             </li>
           );

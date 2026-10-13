@@ -118,6 +118,7 @@ export const timeline = [
     title: "Software Developer (Capstone)",
     org: "Aisha Home Services (AHS)",
     place: "Ottawa, ON",
+    live: "https://ahs-capstone.vercel.app/",
     blurb:
       "Full-stack marketplace connecting homeowners, tenants, and property managers with verified home service professionals across Canada.",
     bullets: [
