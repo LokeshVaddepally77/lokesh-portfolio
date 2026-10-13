@@ -97,6 +97,7 @@ export const coreSkills = [
 export const timeline = [
   {
     rev: "R1",
+    kind: "work",
     date: "Dec 2021 – Sep 2024",
     title: "Full Stack Developer",
     org: "Tata Consultancy Services (client: Infineon Technologies)",
@@ -109,6 +110,7 @@ export const timeline = [
   },
   {
     rev: "R2",
+    kind: "education",
     date: "2024 – May 2026",
     title: "M.S. in Information Systems",
     org: "Northeastern University",
@@ -120,9 +122,14 @@ export const timeline = [
   },
 ];
 
+// `slug` is the anchor on /projects (e.g. /projects#task-manager), `hue` tints
+// the card cover, and `cover` picks its UI sketch: "grid", "code", or "list".
 export const projects = [
   {
     sheet: "01",
+    slug: "ahs-marketplace",
+    hue: 85,
+    cover: "grid",
     name: "AHS — Home Services Marketplace",
     subtitle: "Capstone Project · Vancouver, BC",
     role: "Solo developer: designed and built the full stack",
@@ -148,6 +155,9 @@ export const projects = [
   },
   {
     sheet: "02",
+    slug: "healthcare-plan-api",
+    hue: 250,
+    cover: "code",
     name: "Healthcare Plan Management REST API",
     subtitle: "Backend Systems Project",
     role: "Solo developer: designed and built the API",
@@ -163,6 +173,9 @@ export const projects = [
   },
   {
     sheet: "03",
+    slug: "task-manager",
+    hue: 25,
+    cover: "list",
     name: "Task Manager — ASP.NET Core MVC",
     subtitle: "Academic Project · Northeastern University",
     role: "Solo developer: architected the layered application",

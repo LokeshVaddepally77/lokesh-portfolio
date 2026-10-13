@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lokesh-portfolio-drab-iota.vercel.app/sitemap.xml
+Sitemap: https://lokesh-vaddepally.pages.dev/sitemap.xml

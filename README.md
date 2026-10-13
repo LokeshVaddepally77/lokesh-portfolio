@@ -1,9 +1,10 @@
 # Lokesh Vaddepally — Portfolio
 
-A multi-page portfolio site built with React, Vite, and React Router, styled
-as an engineering drafting sheet (title block, revision-history table,
-drawing sheets) — a nod to the civil-engineering-to-software-architecture
-path in the resume this site is built from.
+A multi-page portfolio site built with React, Vite, and React Router. The
+design follows current Dribbble-style portfolio patterns: a bento-grid hero,
+floating glass pill navigation, large display type with serif-italic
+accents, a scrolling tech-stack marquee, and light/dark themes (follows the
+OS setting until the visitor toggles it; the choice is remembered).
 
 ## Run it locally in VS Code
 
@@ -20,10 +21,22 @@ path in the resume this site is built from.
 ```bash
 npm run build
 ```
-This outputs a static site to `dist/`. Since the resume already mentions
-Vercel, that's the easiest deploy target: push this folder to a GitHub repo,
-import it in Vercel, and it will auto-detect the Vite framework — no config
-needed.
+This outputs a static site to `dist/`.
+
+## Deploy (Cloudflare Pages)
+
+The live site is the `lokesh-vaddepally` Cloudflare Pages project at
+https://lokesh-vaddepally.pages.dev. To publish a new version:
+
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name lokesh-vaddepally --branch master
+```
+
+`dist/` has no `404.html`, so Pages serves `index.html` for unknown paths and
+client-side routes like `/projects` work on refresh. If the site URL ever
+changes, update it in `index.html` (canonical, Open Graph, JSON-LD),
+`public/robots.txt`, and `public/sitemap.xml`.
 
 ## Where to edit content
 
@@ -46,23 +59,31 @@ or update the `resumeFile` path in `profile.js`) whenever you update your resume
 
 ```
 src/
-  data/profile.js          ← all content (edit this first)
-  data/techIcons.js         ← brand-icon tech grid + fallback text-only skills
-  hooks/useReveal.js          ← IntersectionObserver hook powering scroll-reveal animation
+  data/profile.js            ← all content (edit this first)
+  data/techIcons.js          ← brand icons for the stack marquee + text-only skills
+  hooks/useReveal.js         ← IntersectionObserver scroll-reveal ([data-reveal])
+  hooks/useTheme.js          ← light/dark toggle, persisted in localStorage
   components/
-    Navbar.jsx                  ← persistent top nav (routes, mobile toggle)
-    SheetHeader.jsx               ← shared "SHEET n/6" section header
-    Projects.jsx                    ← "Selected work" case studies (routed at /projects)
-    illustrations/                    ← hand-drawn monoline SVG illustrations
+    Navbar.jsx               ← floating pill nav, theme toggle, mobile menu
+    Footer.jsx               ← site-wide footer
+    SectionHeader.jsx        ← eyebrow + title (+ description / action)
+    ProjectCard.jsx          ← compact project tile used on Home
+    ProjectCover.jsx         ← tinted CSS "UI sketch" cover for each project
   pages/
-    Home.jsx                            ← hero, summary, tech stack grid (/)
-    Education.jsx                         ← degrees + certifications (/education)
-    Experience.jsx                          ← revision-history cards (/experience)
-    Resume.jsx                                ← embedded PDF viewer (/resume)
-    Contact.jsx                                 ← contact + sign-off footer (/contact)
-  index.css                                     ← the whole design system (CSS variables at top)
-vercel.json                                       ← SPA rewrite so client-side routes work on refresh
+    Home.jsx                 ← bento hero, stack marquee, about, work, experience, CTA (/)
+    Projects.jsx             ← full case studies, anchor per project (/projects#slug)
+    Experience.jsx           ← timeline (/experience)
+    Education.jsx            ← degrees + certifications (/education)
+    Resume.jsx               ← embedded PDF viewer (/resume)
+    Contact.jsx              ← contact methods (/contact)
+    NotFound.jsx             ← 404
+  index.css                  ← the whole design system (tokens at the top)
+vercel.json                  ← SPA rewrite for the older Vercel deployment
 ```
+
+Each project in `profile.js` also has a `slug` (its anchor on /projects), a
+`hue` (tints its cover), and a `cover` (`"grid"`, `"code"`, or `"list"`
+picks the UI sketch).
 
 ## Notes on scope
 

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import SheetHeader from "../components/SheetHeader.jsx";
-import { education, certifications } from "../data/profile.js";
-import GradCap from "../components/illustrations/GradCap.jsx";
+import { FiArrowUpRight } from "react-icons/fi";
 import { SiMysql } from "react-icons/si";
 import { TbMessageChatbot } from "react-icons/tb";
+import SectionHeader from "../components/SectionHeader.jsx";
+import { education, certifications } from "../data/profile.js";
 
 // One relevant icon per certification, matched to its actual subject —
 // not a generic Udemy badge repeated three times. OpenAI has no icon in
@@ -14,85 +14,79 @@ const certMeta = {
   "Introduction to OpenAI API": { image: "/openai-symbol.svg" },
   "The Complete Prompt Engineering for AI Bootcamp": {
     Icon: TbMessageChatbot,
-    color: "#5fe1d6",
+    color: "#8b7bff",
   },
 };
 
 export default function Education() {
   return (
-    <section className="sheet education-page" id="education">
-      <SheetHeader index="02" label="QUALIFICATIONS" title="Education" />
+    <div className="container page">
+      <SectionHeader
+        page
+        eyebrow="Education"
+        title={
+          <>
+            Degrees &amp; <em>credentials</em>
+          </>
+        }
+        description={
+          <>
+            The formal training behind the work in <Link to="/projects">Projects</Link>.
+          </>
+        }
+      />
 
-      <div className="education-page__intro">
-        <GradCap className="education-page__illo" />
-        <p className="about__text">
-          Degrees, certifications, and the credentials backing up the work in{" "}
-          <Link to="/projects">Projects</Link>.
-        </p>
-      </div>
-
-      <h3 className="education-page__subhead">Degrees</h3>
-      <div className="degree-list">
-        {education.map((e, i) => (
-          <div
-            className={`degree-card degree-card--accent-${i % 4}`}
-            key={e.degree}
-            data-reveal
-          >
-            {e.logo ? (
-              <img className="degree-card__logo" src={e.logo} alt={`${e.school} logo`} />
-            ) : null}
-            <div className="degree-card__body">
-              <span className="degree-card__index">{String(i + 1).padStart(2, "0")}</span>
-              <div className="degree-card__head">
-                <h4>{e.degree}</h4>
-                <span className="degree-card__date">{e.date}</span>
-              </div>
-              <p className="degree-card__school">
+      <h2 className="subhead">Degrees</h2>
+      <div className="degree-grid">
+        {education.map((e) => (
+          <article className="card degree" key={e.degree} data-reveal>
+            <div className="degree__top">
+              <img className="degree__logo" src={e.logo} alt={`${e.school} logo`} />
+              {e.date ? <span className="chip">{e.date}</span> : null}
+            </div>
+            <div>
+              <h3 className="degree__title">{e.degree}</h3>
+              <p className="degree__school">
                 {e.school}
                 {e.place ? ` · ${e.place}` : ""}
               </p>
-              {e.detail ? <p className="degree-card__detail">{e.detail}</p> : null}
             </div>
-          </div>
+            {e.detail ? (
+              <ul className="chips">
+                <li className="chip">{e.detail}</li>
+              </ul>
+            ) : null}
+          </article>
         ))}
       </div>
 
-      <h3 className="education-page__subhead">Certifications</h3>
+      <h2 className="subhead">Certifications</h2>
       <ul className="cert-grid">
-        {certifications.map((c, i) => {
+        {certifications.map((c) => {
           const meta = certMeta[c.name] ?? {};
           return (
             <li key={c.name} data-reveal>
-              <a
-                className={`cert-card cert-card--accent-${i % 4}`}
-                href={c.file}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {meta.image ? (
-                  <img
-                    className="cert-card__icon cert-card__icon--badge"
-                    src={meta.image}
-                    alt=""
+              <a className="card cert" href={c.file} target="_blank" rel="noreferrer">
+                <div className="cert__top">
+                  <span
+                    className={`cert__icon ${meta.image ? "cert__icon--light" : ""}`}
                     aria-hidden="true"
-                  />
-                ) : meta.Icon ? (
-                  <meta.Icon
-                    className="cert-card__icon"
-                    style={{ color: meta.color }}
-                    aria-hidden="true"
-                  />
-                ) : null}
-                <div>
-                  <p className="cert-card__name">{c.name}</p>
-                  <span className="cert-card__issuer">Udemy · View certificate ↗</span>
+                  >
+                    {meta.image ? (
+                      <img src={meta.image} alt="" />
+                    ) : meta.Icon ? (
+                      <meta.Icon style={{ color: meta.color }} />
+                    ) : null}
+                  </span>
+                  <FiArrowUpRight aria-hidden="true" />
                 </div>
+                <h3 className="cert__name">{c.name}</h3>
+                <span className="cert__issuer">Udemy · View certificate</span>
               </a>
             </li>
           );
         })}
       </ul>
-    </section>
+    </div>
   );
 }

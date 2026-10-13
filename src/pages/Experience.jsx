@@ -1,45 +1,60 @@
-import SheetHeader from "../components/SheetHeader.jsx";
-import { timeline } from "../data/profile.js";
-import Timeline from "../components/illustrations/Timeline.jsx";
+import { FiAward, FiBriefcase, FiDownload } from "react-icons/fi";
+import SectionHeader from "../components/SectionHeader.jsx";
+import { profile, timeline } from "../data/profile.js";
+
+const kinds = {
+  work: { label: "Work", Icon: FiBriefcase },
+  education: { label: "Education", Icon: FiAward },
+};
 
 export default function Experience() {
+  // Most recent first.
+  const entries = [...timeline].reverse();
+
   return (
-    <section className="sheet experience-page" id="experience">
-      <SheetHeader index="03" label="REVISION HISTORY" title="Experience" />
+    <div className="container page">
+      <SectionHeader
+        page
+        eyebrow="Experience"
+        title={
+          <>
+            The path <em>so far</em>
+          </>
+        }
+        description="A full stack developer's path through TCS, a move to Canada, and grad school."
+        action={
+          <a className="btn btn--ghost" href={profile.resumeFile} download>
+            <FiDownload aria-hidden="true" /> Download résumé
+          </a>
+        }
+      />
 
-      <div className="education-page__intro">
-        <Timeline className="education-page__illo" />
-        <p className="about__text">
-          A full stack developer's path through TCS, a relocation, and grad
-          school, told the way a revision log would tell it.
-        </p>
-      </div>
-
-      <div className="exp-list">
-        {timeline.map((entry) => (
-          <div className="exp-card" key={entry.rev} data-reveal>
-            <div className="exp-card__head">
-              <div>
-                <span className="exp-card__rev">{entry.rev}</span>
-                <h4 className="exp-card__title">{entry.title}</h4>
-                <p className="exp-card__org">
-                  {entry.org}
-                  {entry.place ? ` · ${entry.place}` : ""}
-                </p>
+      <ol className="timeline">
+        {entries.map((entry) => {
+          const { label, Icon } = kinds[entry.kind] ?? kinds.work;
+          return (
+            <li className="timeline__item" key={entry.rev} data-reveal>
+              <div className="timeline__meta">
+                <span className="timeline__date">{entry.date}</span>
+                {entry.place ? <span className="timeline__place">{entry.place}</span> : null}
               </div>
-              <span className="exp-card__date">{entry.date}</span>
-            </div>
-            <details className="exp-card__details" open>
-              <summary>Responsibilities</summary>
-              <ul>
-                {entry.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </ul>
-            </details>
-          </div>
-        ))}
-      </div>
-    </section>
+              <span className="timeline__marker" aria-hidden="true">
+                <Icon />
+              </span>
+              <article className="card timeline__card">
+                <span className="chip">{label}</span>
+                <h2 className="timeline__title">{entry.title}</h2>
+                <p className="timeline__org">{entry.org}</p>
+                <ul className="bullets">
+                  {entry.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+              </article>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
   );
 }

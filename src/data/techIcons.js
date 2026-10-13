@@ -30,6 +30,8 @@ import {
 // Playwright) don't have an icon in this set — Microsoft had a batch of its
 // own logos pulled from the open icon library over brand-guideline disputes.
 // Those stay as plain text chips in `noIconSkills` below instead of guessing.
+// `color: null` marks monochrome brand marks — they inherit the text color so
+// they read in both light and dark themes.
 export const techIcons = [
   { name: "ASP.NET Core / C#", Icon: SiDotnet, color: "#512BD4" },
   { name: "Java", Icon: SiOpenjdk, color: "#5382A1" },
@@ -41,20 +43,20 @@ export const techIcons = [
   { name: "Bootstrap", Icon: SiBootstrap, color: "#7952B3" },
   { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
   { name: "Node.js", Icon: SiNodedotjs, color: "#5FA04E" },
-  { name: "Express", Icon: SiExpress, color: "#eaf0f2" },
+  { name: "Express", Icon: SiExpress, color: null },
   { name: "PostgreSQL", Icon: SiPostgresql, color: "#4169E1" },
   { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
   { name: "MySQL", Icon: SiMysql, color: "#4479A1" },
   { name: "Firebase", Icon: SiFirebase, color: "#FFCA28" },
   { name: "Supabase", Icon: SiSupabase, color: "#3ECF8E" },
   { name: "RabbitMQ", Icon: SiRabbitmq, color: "#FF6600" },
-  { name: "Elasticsearch", Icon: SiElasticsearch, color: "#005571" },
-  { name: "JWT / OAuth2", Icon: SiJsonwebtokens, color: "#eaf0f2" },
+  { name: "Elasticsearch", Icon: SiElasticsearch, color: "#00BFB3" },
+  { name: "JWT / OAuth2", Icon: SiJsonwebtokens, color: null },
   { name: "Google Maps API", Icon: SiGooglemaps, color: "#4285F4" },
   { name: "Postman", Icon: SiPostman, color: "#FF6C37" },
   { name: "Git", Icon: SiGit, color: "#F05032" },
-  { name: "GitHub", Icon: SiGithub, color: "#eaf0f2" },
-  { name: "Vercel", Icon: SiVercel, color: "#eaf0f2" },
+  { name: "GitHub", Icon: SiGithub, color: null },
+  { name: "Vercel", Icon: SiVercel, color: null },
 ];
 
 export const noIconSkills = [

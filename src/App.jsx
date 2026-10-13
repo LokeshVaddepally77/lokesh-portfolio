@@ -1,10 +1,11 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import Education from "./pages/Education.jsx";
 import Experience from "./pages/Experience.jsx";
-import Projects from "./components/Projects.jsx";
+import Projects from "./pages/Projects.jsx";
 import Resume from "./pages/Resume.jsx";
 import Contact from "./pages/Contact.jsx";
 import NotFound from "./pages/NotFound.jsx";
@@ -23,19 +24,32 @@ const pageTitles = {
 };
 
 export default function App() {
-  const location = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = pageTitles[location.pathname] ?? `Page not found · ${siteTitle}`;
-  }, [location.pathname]);
+    document.title = pageTitles[pathname] ?? `Page not found · ${siteTitle}`;
+  }, [pathname]);
 
-  useReveal(location.pathname);
+  // Jump (not smooth-scroll) to the top on route change, or to the #anchor
+  // when one is given, e.g. a home-page project card → /projects#slug.
+  useEffect(() => {
+    const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (target) {
+      target.scrollIntoView({ behavior: "instant", block: "start" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, [pathname, hash]);
+
+  useReveal(pathname);
 
   return (
     <div className="layout">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
       <Navbar />
-      <main className="content" key={location.pathname}>
+      <main id="main" className="content" key={pathname}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/education" element={<Education />} />
@@ -46,6 +60,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

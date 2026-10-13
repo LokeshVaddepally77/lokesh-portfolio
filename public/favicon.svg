@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#0A1826"/>
-  <path d="M8 8 L8 24 M8 8 L24 8" stroke="#5FE1D6" stroke-width="4" fill="none"/>
-  <path d="M56 56 L56 40 M56 56 L40 56" stroke="#5FE1D6" stroke-width="4" fill="none"/>
-  <circle cx="32" cy="32" r="6" fill="#E8A33D"/>
+  <rect width="64" height="64" rx="32" fill="#09090b"/>
+  <text x="32" y="41" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#f4f4f5">LV</text>
+  <circle cx="50" cy="14" r="6" fill="#c6f45d"/>
 </svg>
