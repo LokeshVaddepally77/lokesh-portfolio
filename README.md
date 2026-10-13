@@ -78,7 +78,6 @@ src/
     Contact.jsx              ← contact methods (/contact)
     NotFound.jsx             ← 404
   index.css                  ← the whole design system (tokens at the top)
-vercel.json                  ← SPA rewrite for the older Vercel deployment
 ```
 
 Each project in `profile.js` also has a `slug` (its anchor on /projects), a

@@ -21,7 +21,7 @@ export default function Experience() {
             The path <em>so far</em>
           </>
         }
-        description="A full stack developer's path through TCS, a move to Canada, and grad school."
+        description="A full stack developer's path through TCS, a move to Canada, grad school, and a capstone role at Aisha Home Services."
         action={
           <a className="btn btn--ghost" href={profile.resumeFile} download>
             <FiDownload aria-hidden="true" /> Download résumé
@@ -45,6 +45,7 @@ export default function Experience() {
                 <span className="chip">{label}</span>
                 <h2 className="timeline__title">{entry.title}</h2>
                 <p className="timeline__org">{entry.org}</p>
+                {entry.blurb ? <p className="timeline__blurb">{entry.blurb}</p> : null}
                 <ul className="bullets">
                   {entry.bullets.map((b) => (
                     <li key={b}>{b}</li>

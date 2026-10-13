@@ -16,7 +16,7 @@ import {
   projects,
   timeline,
   education,
-  skillGroups,
+  focusAreas,
 } from "../data/profile.js";
 import { techIcons, noIconSkills } from "../data/techIcons.js";
 import SectionHeader from "../components/SectionHeader.jsx";
@@ -65,7 +65,6 @@ function Marquee({ items, reverse = false }) {
 }
 
 const half = Math.ceil(techIcons.length / 2);
-const systemDesign = skillGroups.find((g) => g.label === "System Design")?.items ?? [];
 const degree = education[0];
 
 export default function Home() {
@@ -83,9 +82,9 @@ export default function Home() {
                 Building <em>reliable</em> full stack products with .NET &amp; React.
               </h1>
               <p className="hero__summary">
-                I'm {profile.name.split(" ")[0]}, a {profile.role.toLowerCase()} with ~3
-                years shipping production features in ASP.NET Core, React, and Node.js,
-                now pairing that with a solid grounding in system design.
+                I'm {profile.name.split(" ")[0]}, a {profile.role.toLowerCase()} with 3
+                years at Tata Consultancy Services and Canadian experience at Aisha Home
+                Services, building web apps in React, TypeScript, C#, and ASP.NET Core.
               </p>
             </div>
             <div className="actions">
@@ -132,7 +131,7 @@ export default function Home() {
 
           <div className="card tile tile--stats" style={{ "--i": 2 }}>
             <div>
-              <span className="stat__value">~3 yrs</span>
+              <span className="stat__value">3+ yrs</span>
               <span className="stat__label">Professional experience</span>
             </div>
             <div>
@@ -146,9 +145,9 @@ export default function Home() {
           </div>
 
           <div className="card tile tile--explore" style={{ "--i": 3 }}>
-            <span className="tile__label">Currently deepening</span>
+            <span className="tile__label">Across the stack</span>
             <ul className="chips">
-              {systemDesign.map((item) => (
+              {focusAreas.map((item) => (
                 <li className="chip" key={item}>
                   {item}
                 </li>
@@ -212,7 +211,7 @@ export default function Home() {
           eyebrow="About"
           title={
             <>
-              Production features, grounded in <em>system design</em>.
+              From React to SQL, <em>end to end</em>.
             </>
           }
         />
@@ -220,18 +219,17 @@ export default function Home() {
           <p className="about__statement">
             Full stack developer across .NET/C# and React.{" "}
             <span>
-              Nearly three years at Tata Consultancy Services building and shipping features
-              for Infineon Technologies, then an M.S. in Information Systems at
-              Northeastern University in Vancouver.
+              Three years at Tata Consultancy Services building features for Infineon
+              Technologies, an M.S. in Information Systems at Northeastern University,
+              and a capstone role as Software Developer at Aisha Home Services.
             </span>
           </p>
           <div className="about__side">
             <p>{profile.summary}</p>
             <p>
               Next, I'm looking for a full stack role (.NET/C# or React-heavy) where I
-              can keep pairing production feature work with the system design
-              fundamentals I've been studying: caching, replication, message queues,
-              and API design.
+              can keep owning features end to end, from React front ends through APIs,
+              schema design, testing, and CI/CD.
             </p>
             <div>
               <span className="tile__label">Also working with</span>

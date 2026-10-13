@@ -14,7 +14,7 @@ export default function Projects() {
             Case <em>studies</em>
           </>
         }
-        description="Three full stack builds, each designed and shipped solo: the problem, my role, and what came out the other end."
+        description="Three builds, each designed and built solo: the problem, my role, and what came out the other end."
       />
 
       <div className="cases">

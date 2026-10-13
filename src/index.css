@@ -1367,6 +1367,12 @@ em {
   color: var(--muted);
 }
 
+.timeline__blurb {
+  margin-top: 0.75rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
 .bullets {
   display: grid;
   gap: 0.75rem;
