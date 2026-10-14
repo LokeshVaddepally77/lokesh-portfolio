@@ -168,7 +168,7 @@ export const projects = [
     stack: [".NET 8", "C#", "ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "GitHub Actions", "Azure App Service"],
     links: {
       live: "https://taskmanager-lokesh-ezaah3c8dmdpbnae.canadacentral-01.azurewebsites.net",
-      github: null, // repo is private
+      github: "https://github.com/LokeshVaddepally77/task-manager-aspnet-core",
     },
   },
   {
@@ -186,7 +186,7 @@ export const projects = [
     stack: ["Node.js", "Express", "RabbitMQ", "Elasticsearch", "OAuth2 / JWT (RS256)", "Ajv"],
     links: {
       live: null,
-      github: null,
+      github: "https://github.com/LokeshVaddepally77/healthcare-plan-api",
     },
   },
 ];
